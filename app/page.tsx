@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Check } from "lucide-react";
 
 export default function Home() {
   return (
@@ -6,12 +7,17 @@ export default function Home() {
       <div className="flex flex-col gap-5">
         <div className="flex flex-row gap-20">
           <Badge content={"teste"} className="right-10" />
-          <Badge content={"5"} placement="tright">
+          <Badge
+            content={"5"}
+            variant={"circle"}
+            placement="tright"
+            className="bg-rose-500">
             <img
               src={"https://i.pravatar.cc/300?u=a042581f4e29026709d"}
               width={100}
               height={100}
               alt="Picture of the author"
+              className="rounded-full border-double border-8 border-gray-600"
             />
           </Badge>
           <Badge content={"5"} placement="tleft">
@@ -20,14 +26,19 @@ export default function Home() {
               width={100}
               height={100}
               alt="Picture of the author"
+              className="rounded-2xl"
             />
           </Badge>
-          <Badge content={"5"} placement="bright">
+          <Badge
+            placement="bright"
+            icon={<Check />}
+            className="rounded-full px-1 py-1.5 bg-green-500">
             <img
               src={"https://i.pravatar.cc/300?u=a042581f4e29026709d"}
               width={100}
               height={100}
               alt="Picture of the author"
+              className="rounded-2xl border-double border-8 border-green-500"
             />
           </Badge>
           <Badge content={"5"} placement="bleft">
@@ -36,19 +47,9 @@ export default function Home() {
               width={100}
               height={100}
               alt="Picture of the author"
+              className="rounded-2xl"
             />
           </Badge>
-          <div className="relative">
-            <div className="absolute border-2 border-current bg-red-500 text-white font-semibold w-8 h-8 flex items-center justify-center rounded-full text-xs -translate-x-1/2 -translate-y-1/2 top-1 -right-6">
-              99
-            </div>
-            <img
-              src={"https://i.pravatar.cc/300?u=a042581f4e29026709d"}
-              width={100}
-              height={100}
-              alt="Picture of the author"
-            />
-          </div>
         </div>
         <div className="flex flex-row gap-5"></div>
         <div className="flex flex-row gap-5"></div>
