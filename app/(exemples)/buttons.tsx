@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import React from "react";
 
@@ -8,7 +10,7 @@ function Buttons() {
         <Button variant="default" size="sm">
           Teste
         </Button>
-        <Button variant="default" size="md">
+        <Button variant="default" size="md" onClick={() => alert("teste")}>
           Teste
         </Button>
         <Button variant="default" size="lg">
