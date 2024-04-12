@@ -47,7 +47,7 @@ export interface BadgeProps
   content?: string;
   icon?: React.ReactNode;
   onClose?: () => void;
-  closeVariant?: "default" | "round";
+  closeVariant?: string;
 }
 
 function Badge({
@@ -79,12 +79,7 @@ function Badge({
           {/* Renderiza o botão de fechar se a função onClose estiver presente */}
           {onClose && (
             <button
-              className={cn(
-                "flex ml-2",
-                closeVariant == "round"
-                  ? "bg-background/50 rounded-full hover:bg-background hover:text-primary transition ease-in-out duration-200"
-                  : ""
-              )}
+              className={cn("flex ml-2", closeVariant)}
               onClick={onClose}
               aria-label="close">
               <X className={cn("p-0.5")} />
