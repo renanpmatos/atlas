@@ -21,7 +21,6 @@ const buttonVariants = cva(
           "bg-primary text-primary-foreground shadow-lg shadow-primary/30 rounded-[12px] transition ease-in-out delay-100 duration-200 hover:bg-primary/90",
       },
       size: {
-        default: "h-10 px-5 py-2",
         sm: "h-7 px-4 py-2 text-sm",
         md: "h-10 px-5 py-2",
         lg: "h-12 px-8 text-lg",
@@ -36,7 +35,7 @@ const buttonVariants = cva(
     },
     defaultVariants: {
       variant: "default",
-      size: "default",
+      size: "md",
       radius: "md",
     },
   }
