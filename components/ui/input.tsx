@@ -13,15 +13,51 @@ const inputVariants = cva(
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
-    VariantProps<typeof inputVariants> {}
+    VariantProps<typeof inputVariants> {
+  animatedPlaceholder?: string;
+}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, animatedPlaceholder, type, ...props }, ref) => {
     return (
-      <input type={type} className={cn(inputVariants())} ref={ref} {...props} />
+      <>
+        <input
+          type={type}
+          className={cn(inputVariants())}
+          ref={ref}
+          {...props}
+        />
+        <label
+          htmlFor="text"
+          className="absolute bottom-0 left-0 w-full h-full pointer-events-none border-b border-white">
+          <span className="absolute bottom-0 left-0 pb-5 transition-all duration-300">
+            {animatedPlaceholder}
+          </span>
+        </label>
+      </>
     );
   }
 );
 Input.displayName = "Input";
 
 export { Input };
+
+/*
+
+<div class="flex items-center justify-center">
+  <div class="relative">
+    <input
+      id="username"
+      name="username"
+      type="text"
+      class="border-b border-gray-300 py-1 focus:border-b-2 focus:border-blue-700 transition-colors focus:outline-none peer bg-inherit"
+    />
+    <label
+      for="username"
+      class="absolute left-0 top-1 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all peer-focus:text-blue-700"
+      >Name</label
+    >
+  </div>
+</div>
+
+*/
